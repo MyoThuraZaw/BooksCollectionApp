@@ -14,6 +14,8 @@
 		E31712AA22FC7D1200AE6F37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E31712A822FC7D1200AE6F37 /* LaunchScreen.storyboard */; };
 		E31712B222FC830000AE6F37 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31712B122FC830000AE6F37 /* Book.swift */; };
 		E31712B422FC83A400AE6F37 /* BookLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31712B322FC83A400AE6F37 /* BookLibrary.swift */; };
+		E31712BA22FC87E100AE6F37 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31712B922FC87E100AE6F37 /* BookCell.swift */; };
+		E31712BC22FC92AE00AE6F37 /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31712BB22FC92AE00AE6F37 /* BookDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		E31712AB22FC7D1200AE6F37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E31712B122FC830000AE6F37 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		E31712B322FC83A400AE6F37 /* BookLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookLibrary.swift; sourceTree = "<group>"; };
+		E31712B922FC87E100AE6F37 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		E31712BB22FC92AE00AE6F37 /* BookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				E31712A122FC7D1100AE6F37 /* ViewController.swift */,
+				E31712BB22FC92AE00AE6F37 /* BookDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -89,6 +94,7 @@
 		E31712B722FC866000AE6F37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E31712B922FC87E100AE6F37 /* BookCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +183,8 @@
 				E31712A222FC7D1100AE6F37 /* ViewController.swift in Sources */,
 				E31712A022FC7D1100AE6F37 /* AppDelegate.swift in Sources */,
 				E31712B222FC830000AE6F37 /* Book.swift in Sources */,
+				E31712BC22FC92AE00AE6F37 /* BookDetailsViewController.swift in Sources */,
+				E31712BA22FC87E100AE6F37 /* BookCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
