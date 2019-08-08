@@ -31,6 +31,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         let booklibrary = BookLibrary()
         booklist = booklibrary.books
+        
+        collectionView.backgroundColor = UIColor(red: 255/255, green: 235/255, blue: 235/255, alpha: 1)
     }
     
     func setUpSize() {
@@ -50,26 +52,40 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
         
-        let titleLabel = UILabel()
-        titleLabel.text = booklist[indexPath.item].Title
+//        let titleLabel = UILabel()
+//        titleLabel.text = booklist[indexPath.item].Title
+//        cell.addSubview(titleLabel)
+//        setUpTitleConstraintsAndProperties(titleLabel, cell)
         
-        cell.addSubview(titleLabel)
-
-        setUpTitleConstraintsAndProperties(titleLabel, cell)
+        var coverImage = UIImage()
+        coverImage = booklist[indexPath.item].CoverImage
+        let imageView = UIImageView(image: coverImage)
+        imageView.contentMode = .scaleAspectFill
+        cell.addSubview(imageView)
+        
+        setUpCoverImageConstrants(imageView, cell)
         
         return cell
     }
     
-    func setUpTitleConstraintsAndProperties(_ titleLabel: UILabel,_ cell: UICollectionViewCell) {
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.topAnchor.constraint(equalTo: cell.topAnchor).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: cell.leadingAnchor).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: cell.trailingAnchor).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: cell.bottomAnchor).isActive = true
-        titleLabel.textColor = .orange
-        titleLabel.textAlignment = .center
-        titleLabel.numberOfLines = 0
+    func setUpCoverImageConstrants(_ imageView: UIImageView,_ cell: UICollectionViewCell) {
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.topAnchor.constraint(equalTo: cell.topAnchor).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: cell.leadingAnchor).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: cell.trailingAnchor).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: cell.bottomAnchor).isActive = true
     }
+    
+//    func setUpTitleConstraintsAndProperties(_ titleLabel: UILabel,_ cell: UICollectionViewCell) {
+//        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+//        titleLabel.topAnchor.constraint(equalTo: cell.topAnchor).isActive = true
+//        titleLabel.leadingAnchor.constraint(equalTo: cell.leadingAnchor).isActive = true
+//        titleLabel.trailingAnchor.constraint(equalTo: cell.trailingAnchor).isActive = true
+//        titleLabel.bottomAnchor.constraint(equalTo: cell.bottomAnchor).isActive = true
+//        titleLabel.textColor = .orange
+//        titleLabel.textAlignment = .center
+//        titleLabel.numberOfLines = 0
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = CGSize(width: itemWidth, height: itemHeight)
@@ -85,8 +101,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        collectionView.backgroundColor = .yellow
-//        collectionView.cellForItem(at: indexPath)?.backgroundColor = .red
+        
         selectedIndex = indexPath.item
         performSegue(withIdentifier: "detailsegue", sender: self)
         

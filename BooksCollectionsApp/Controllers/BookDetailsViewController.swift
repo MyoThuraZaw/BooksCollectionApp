@@ -16,14 +16,21 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var bookCover: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.title = selectedBook.Title
         titleLabel.text = selectedBook.Title
         authorLabel.text = selectedBook.Author
-        priceLabel.text = String(selectedBook.Price)
-        ratingLabel.text = String(selectedBook.Rating)
+        priceLabel.text = "$ \(String(selectedBook.Price))"
+        ratingLabel.text = "Rating: \(String(selectedBook.Rating))"
+        bookCover.image = selectedBook.CoverImage
+    
+        view.backgroundColor = UIColor(red: 255/255, green: 225/255, blue: 173/255, alpha: 1)
+        
+        
     }
     
     

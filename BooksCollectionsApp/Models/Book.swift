@@ -29,10 +29,16 @@ class Book {
         return _rating
     }
     
-    init(title: String, author: String, price: Float, rating: Float) {
+    private var _coverImage: UIImage
+    var CoverImage: UIImage {
+        return _coverImage
+    }
+    
+    init(title: String, author: String, price: Float, rating: Float, coverImage: UIImage) {
         _title = title
         _author = author
         _price = price
         _rating = rating
+        _coverImage = coverImage
     }
 }
