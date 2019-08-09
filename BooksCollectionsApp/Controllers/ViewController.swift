@@ -33,6 +33,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         booklist = booklibrary.books
         
         collectionView.backgroundColor = UIColor(red: 255/255, green: 235/255, blue: 235/255, alpha: 1)
+        view.backgroundColor = UIColor(red: 255/255, green: 235/255, blue: 235/255, alpha: 1)
     }
     
     func setUpSize() {
@@ -109,7 +110,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is BookDetailsViewController {
-            var vc = segue.destination as! BookDetailsViewController
+            let vc = segue.destination as! BookDetailsViewController
             
             vc.selectedBook = booklist[selectedIndex]
         }
